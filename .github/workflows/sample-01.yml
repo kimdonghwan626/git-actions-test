@@ -65,9 +65,11 @@ jobs:
         with:
           name: git-actions-test-jar
 
+      - run: java -version
+      
       - shell: sh
         run: |
-          java -jar git-actions-test.jar
+          java -jar git-actions-test-0.0.1-SNAPSHOT.jar
     # - name: GH Release
     #   uses: softprops/action-gh-release@v2
     #   with:
