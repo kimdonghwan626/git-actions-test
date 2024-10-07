@@ -52,7 +52,7 @@ jobs:
     - run: cat $GITHUB_OUTPUT
 
     - name: Get Stage
-      run: echo ${{steps.set-debug-stage.outputs.BUILD_STAGE}}
+      run: echo "${{steps.set-debug-stage.outputs.BUILD_STAGE}}"
     # - name: GH Release
     #   uses: softprops/action-gh-release@v2
     #   with:
