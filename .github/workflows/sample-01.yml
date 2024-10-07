@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     environment:
       name: dev
       url: https://www.sample-01.com
@@ -48,6 +48,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         tag_name: v0.0.1
+        token: ${{secrets.GITHUB_TOKEN}}
         generat/e_release_notes: true
         name: Dev
-        # files: archive.zip
+        files: README.md
