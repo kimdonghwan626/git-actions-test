@@ -25,7 +25,7 @@ jobs:
     - name: echo env value
       run: echo ${{env.SAMPLE_VALUE}}/${{secrets.SAMPLE_SECRET_NAME}}/${{vars.SAMPLE_VAR_NAME}}
 
-    - uses: gradle/gradle-build-actoin@v2
+    - uses: gradle/gradle-build-action@v2
       with:
         arguments: build
 
