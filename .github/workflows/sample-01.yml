@@ -24,12 +24,22 @@ jobs:
 
     - name: echo env value
       run: echo ${{env.SAMPLE_VALUE}}/${{secrets.SAMPLE_SECRET_NAME}}/${{vars.SAMPLE_VAR_NAME}}
-      
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
+    - uses: gradle/gradle-build-actoin@v2
+      with:
+        arguments: build
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: archive.zip
+        path: build/libs
+        
+    # - name: Setup Gradle
+    #   uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
+
+    # - name: Build with Gradle Wrapper
+    #   run: ./gradlew build
 
   # dependency-submission:
   #   runs-on: ubuntu-latest
