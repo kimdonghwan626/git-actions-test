@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    environment:
+      name: dev
+      url: https://www.sample-01.com
     env:
       SAMPLE_VALUE: sampleValue
       
