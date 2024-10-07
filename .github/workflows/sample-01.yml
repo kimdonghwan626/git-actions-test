@@ -46,8 +46,8 @@ jobs:
 
     - name: GH Release
       uses: softprops/action-gh-release@v2
-      with:
-        tag_name: v0.0.1
-        generate_release_notes: true
-        name: Dev
-        files: archive.zip
+      # with:
+        # tag_name: v0.0.1
+        # generate_release_notes: true
+        # name: Dev
+        # files: archive.zip
