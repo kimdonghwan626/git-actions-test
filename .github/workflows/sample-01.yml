@@ -43,12 +43,21 @@ jobs:
       with:
         name: archive.zip
         path: build/libs
+    
+    - name: Set Debug
+      id: set-debug-stage
+      run: echo "BUILD_STATE=debug" >> $GITHUB_OUTPUT
 
-    - name: GH Release
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: v0.0.1
-        token: ${{secrets.GITHUB_TOKEN}}
-        generate_release_notes: true
-        name: Dev
-        files: README.md
+    - run: echo $GITHUB_OUTPUT
+    - run: cat $GITHUB_OUTPUT
+
+    - name: Get Stage
+      run: echo ${{steps.set-debug-stage.outputs.BUILD_STAGE}}
+    # - name: GH Release
+    #   uses: softprops/action-gh-release@v2
+    #   with:
+    #     tag_name: v0.0.1
+    #     token: ${{secrets.GITHUB_TOKEN}}
+    #     generate_release_notes: true
+    #     name: Dev
+    #     files: README.md
