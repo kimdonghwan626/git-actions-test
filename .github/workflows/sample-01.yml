@@ -45,7 +45,7 @@ jobs:
         path: build/libs
 
     - name: GH Release
-      uses: softprops/action-gh-realese@v0.1.15
+      uses: softprops/action-gh-release@v0.1.15
       with:
         tag_name: v0.0.1
         generate_release_notes: true
