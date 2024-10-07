@@ -43,3 +43,11 @@ jobs:
       with:
         name: archive.zip
         path: build/libs
+
+    - name: GH Release
+      uses: softprops/action-gh-realese@v0.1.15
+      with:
+        tag_name: v0.0.1
+        generate_release_notes: true
+        name: Dev
+        files: archive.zip
